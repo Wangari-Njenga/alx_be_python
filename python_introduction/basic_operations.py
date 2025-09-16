@@ -1,5 +1,5 @@
 # Define two numbers
-number1 = 12
+number1 = 10
 number2 = 5
 
 # Calculate operations
