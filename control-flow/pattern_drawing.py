@@ -5,3 +5,5 @@ i = 1
 while i <= size:
     print('*' * i)
     i += 1
+
+print("*", end="")
