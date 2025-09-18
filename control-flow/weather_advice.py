@@ -4,11 +4,11 @@ def get_weather_advice():
 #Asks user about the weather
     weather = input("What's the weather like today? (sunny/rainy/cold): ")
 
-    if the weather is "sunny":
+    if weather == "sunny":
         return "Wear a t-shirt and sunglasses."
-    elif  "rainy":
+    elif weather == "rainy":
         return "Don't forget your umbrella and a raincoat."
-    elif  "cold":
+    elif weather == "cold":
         return "Make sure to wear a warm coat and a scarf."
     else:
         return "Sorry, I don't have recommendations for this weather condition."
