@@ -1,7 +1,9 @@
 # shopping_list_manager.py
 
+# Start with an empty shopping list
 shopping_list = []
 
+# Define the display_menu function
 def display_menu():
     print("\nShopping List Manager")
     print("1. Add item")
@@ -9,6 +11,7 @@ def display_menu():
     print("3. View list")
     print("4. Exit")
 
+# Define the function to add an item
 def add_item():
     item = input("Enter the item to add: ").strip()
     if item:
@@ -17,6 +20,7 @@ def add_item():
     else:
         print("Item name cannot be empty.")
 
+# Define the function to remove an item
 def remove_item():
     item = input("Enter the item to remove: ").strip()
     try:
@@ -25,6 +29,7 @@ def remove_item():
     except ValueError:
         print(f"'{item}' not found in the shopping list.")
 
+# Define the function to view the list
 def view_list():
     if shopping_list:
         print("\nCurrent Shopping List:")
@@ -33,6 +38,7 @@ def view_list():
     else:
         print("\nYour shopping list is empty.")
 
+# Main loop to run the menu
 def main():
     while True:
         display_menu()
@@ -50,6 +56,7 @@ def main():
         else:
             print("Invalid choice. Please try again.")
 
+# Run the program
 if __name__ == "__main__":
     main()
            
