@@ -49,6 +49,6 @@ def main():
             print("Invalid choice. Please try again.")
 
 # Run program
-if _name_ == "_main_":
-    main()       
+if __name__ == "__main__":
+    main()
  
