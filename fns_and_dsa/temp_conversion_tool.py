@@ -1,3 +1,4 @@
+
 # temp_conversion_tool.py
 
 # Global Conversion Factors
@@ -13,11 +14,14 @@ def convert_to_fahrenheit(celsius):
 
 # User Interaction
 def main():
+    temp_input = input("Enter the temperature to convert: ").strip()
+
+    # Validate temperature input
     try:
-        temp_input = input("Enter the temperature to convert: ").strip()
         temperature = float(temp_input)
     except ValueError:
-        raise ValueError("Invalid temperature. Please enter a numeric value.")
+        print("Invalid temperature. Please enter a numeric value.")
+        return
 
     unit = input("Is this temperature in Celsius or Fahrenheit? (C/F): ").strip().upper()
 
@@ -28,7 +32,7 @@ def main():
         converted = convert_to_fahrenheit(temperature)
         print(f"{temperature}°C is {converted}°F")
     else:
-        raise ValueError("Invalid unit. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
+        print("Invalid unit. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
 
 if __name__ == "__main__":
     main()
