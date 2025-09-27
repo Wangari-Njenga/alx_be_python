@@ -7,10 +7,12 @@ CELSIUS_OFFSET = 32
 
 # --- Conversion Functions ---
 def celsius_to_fahrenheit(celsius):
+    global FAHRENHEIT_FACTOR, CELSIUS_OFFSET
     return (celsius * FAHRENHEIT_FACTOR) + CELSIUS_OFFSET
 
 
 def fahrenheit_to_celsius(fahrenheit):
+    global FAHRENHEIT_FACTOR, CELSIUS_OFFSET
     return (fahrenheit - CELSIUS_OFFSET) / FAHRENHEIT_FACTOR
 
 
