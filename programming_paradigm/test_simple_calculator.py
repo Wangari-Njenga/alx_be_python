@@ -1,35 +1,22 @@
+import unittest
 from simple_calculator import SimpleCalculator
 
-def main():
-    calc = SimpleCalculator()
+class TestSimpleCalculator(unittest.TestCase):
+    def setUp(self):
+        self.calc = SimpleCalculator()
 
-    print("Welcome to the Simple Calculator!")
-    print("Available operations: add, subtract, multiply, divide")
+    def test_addition(self):
+        self.assertEqual(self.calc.add(2, 3), 5)
 
-    operation = input("Enter operation: ").strip().lower()
-    try:
-        a = float(input("Enter first number: "))
-        b = float(input("Enter second number: "))
-    except ValueError:
-        print("Error: Please enter numeric values only.")
-        return
+    def test_subtraction(self):
+        self.assertEqual(self.calc.subtract(5, 3), 2)
 
-    if operation == "add":
-        result = calc.add(a, b)
-    elif operation == "subtract":
-        result = calc.subtract(a, b)
-    elif operation == "multiply":
-        result = calc.multiply(a, b)
-    elif operation == "divide":
-        result = calc.divide(a, b)
-        if result is None:
-            print("Error: Cannot divide by zero.")
-            return
-    else:
-        print("Invalid operation.")
-        return
+    def test_multiply(self):
+        self.assertEqual(self.calc.multiply(4, 5), 20)
 
-    print(f"Result: {result}")
+    def test_divide(self):
+        self.assertEqual(self.calc.divide(10, 2), 5)
+        self.assertIsNone(self.calc.divide(5, 0))  # Division by zero
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    unittest.main()
